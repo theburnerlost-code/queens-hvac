@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="list-page">
+  <div class="page-hero">
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="list-grid">
+      {{ range .Pages }}
+      <a href="{{ .RelPermalink }}" class="list-card">
+        {{ with .Params.icon }}<div class="list-card-icon">{{ . }}</div>{{ end }}
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Summary }}</p>
+        <span class="list-link">Learn more →</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

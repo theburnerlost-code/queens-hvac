@@ -1,0 +1,61 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <span class="logo-icon">⬡</span>
+          <div class="logo-text">
+            <span class="logo-name">Queens Emergency</span>
+            <span class="logo-sub">HVAC Service · 24/7</span>
+          </div>
+        </a>
+        <p>Licensed, insured, and based in Queens. Available 24 hours a day, 7 days a week, 365 days a year.</p>
+        <p class="footer-license">{{ .Site.Params.license }}</p>
+      </div>
+
+      <div class="footer-nav">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/burst-pipe-repair/">AC Breakdown Repair</a></li>
+          <li><a href="/services/drain-cleaning/">Duct Cleaning</a></li>
+          <li><a href="/services/water-heater-repair/">HVAC Unit Repair</a></li>
+          <li><a href="/services/sewer-line-repair/">Refrigerant Line Repair</a></li>
+          <li><a href="/services/thermostat-repair/">Thermostat Repair & Replacement</a></li>
+          <li><a href="/services/frozen-pipe-repair/">Frozen AC Unit Repair</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav">
+        <h4>Areas Served</h4>
+        <ul>
+          <li><a href="/locations/mott-haven/">Mott Haven</a></li>
+          <li><a href="/locations/fordham/">Fordham</a></li>
+          <li><a href="/locations/riverdale/">Riverdale</a></li>
+          <li><a href="/locations/pelham-bay/">Pelham Bay</a></li>
+          <li><a href="/locations/co-op-city/">Co-op City</a></li>
+          <li><a href="/locations/kingsbridge/">Kingsbridge</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Emergency Line</h4>
+        <a href="tel:{{ .Site.Params.phonePlain }}" class="footer-phone">{{ .Site.Params.phone }}</a>
+        <p>Available right now. Call anytime.</p>
+        <a href="mailto:{{ .Site.Params.email }}" class="footer-email">{{ .Site.Params.email }}</a>
+        <div class="footer-social">
+          <a href="{{ .Site.Params.social.google }}" target="_blank" rel="noopener">Google</a>
+          <a href="{{ .Site.Params.social.yelp }}" target="_blank" rel="noopener">Yelp</a>
+          <a href="{{ .Site.Params.social.facebook }}" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {{ now.Year }} {{ .Site.Params.businessName }}. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,29 @@
+- name: "Marcus T."
+  neighborhood: "Astoria"
+  rating: 5
+  text: "AC died at 11pm in July. Called Queens HVAC Pro and they were at my door in 55 minutes. Fixed a capacitor issue, had cold air running within the hour. Unbelievable service."
+
+- name: "Yolanda R."
+  neighborhood: "Flushing"
+  rating: 5
+  text: "My furnace stopped working on the coldest night of the year. They came out same night, diagnosed a bad ignitor, had parts on the truck. Heat was back on by midnight."
+
+- name: "David K."
+  neighborhood: "Forest Hills"
+  rating: 5
+  text: "Used them for an AC that was freezing up every afternoon. They found a refrigerant leak the previous company missed, fixed it properly. Running perfect all summer."
+
+- name: "Carmen V."
+  neighborhood: "Jackson Heights"
+  rating: 5
+  text: "Had them install a mini-split in my apartment. No existing ductwork — they handled everything including the permit. Clean install, explained how to use it, great price."
+
+- name: "James O."
+  neighborhood: "Bayside"
+  rating: 5
+  text: "Honest flat-rate pricing. They told me exactly what it would cost before starting. In Queens that's rare. Will use them for everything HVAC going forward."
+
+- name: "Sylvia M."
+  neighborhood: "Jamaica"
+  rating: 5
+  text: "Called at 8pm when our AC stopped working with elderly parents in the house. Technician was professional, fast, and had us cool within 90 minutes. Highly recommend."

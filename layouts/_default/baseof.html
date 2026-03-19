@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d1117">
+
+  <!-- SEO -->
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Params.businessName }}{{ end }}</title>
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ .Site.Params.businessName }}">
+
+  <!-- Local Business Schema -->
+  {{ if .IsHome }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HVAC Technician",
+    "name": "{{ .Site.Params.businessName }}",
+    "description": "{{ .Site.Params.description }}",
+    "telephone": "{{ .Site.Params.phone }}",
+    "email": "{{ .Site.Params.email }}",
+    "url": "{{ .Site.BaseURL }}",
+    "areaServed": ["Queens", "Yonkers", "Mount Vernon", "New Rochelle"],
+    "openingHours": "Mo-Su 00:00-24:00",
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ .Site.Params.rating }}",
+      "reviewCount": "{{ .Site.Params.reviewCount }}"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Queens",
+      "addressRegion": "NY",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+  {{ end }}
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  {{ partial "emergency-bar.html" . }}
+  {{ partial "header.html" . }}
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  {{ partial "service-area-strip.html" . }}
+  {{ partial "trust-bar.html" . }}
+  {{ partial "footer.html" . }}
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

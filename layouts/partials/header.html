@@ -1,0 +1,25 @@
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-icon">⬡</span>
+      <div class="logo-text">
+        <span class="logo-name">Queens Emergency</span>
+        <span class="logo-sub">HVAC Service · 24/7</span>
+      </div>
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" class="nav-link {{ if eq $.RelPermalink .URL }}active{{ end }}">{{ .Name }}</a>
+      {{ end }}
+      <a href="tel:{{ $.Site.Params.phonePlain }}" class="nav-phone">
+        <span class="nav-phone-icon">📞</span>
+        {{ $.Site.Params.phone }}
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

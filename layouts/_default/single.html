@@ -1,0 +1,59 @@
+{{ define "main" }}
+<article class="single-page">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        {{ with .Parent }}
+          <span>›</span>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}
+        <span>›</span>
+        <span>{{ .Title }}</span>
+      </div>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+      <a href="tel:{{ $.Site.Params.phonePlain }}" class="btn-primary">
+        📞 Call {{ $.Site.Params.phone }}
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="page-content">
+    <div class="container container-narrow">
+      <div class="content-body">
+        {{ .Content }}
+      </div>
+
+      <!-- SIDEBAR CTA -->
+      <aside class="content-sidebar">
+        <div class="sidebar-cta">
+          <div class="sidebar-badge">⚡ 24/7 Emergency Service</div>
+          <h3>Need a HVAC Technician Now?</h3>
+          <p>Licensed Queens HVAC technicians available right now. 45-min response guaranteed.</p>
+          <a href="tel:{{ $.Site.Params.phonePlain }}" class="btn-primary btn-block">
+            📞 {{ $.Site.Params.phone }}
+          </a>
+          <div class="sidebar-trust">
+            <span>★ {{ $.Site.Params.rating }} ({{ $.Site.Params.reviewCount }} reviews)</span>
+            <span>NYC Licensed</span>
+          </div>
+        </div>
+
+        {{ if .Params.relatedServices }}
+        <div class="sidebar-related">
+          <h4>Related Services</h4>
+          {{ range .Params.relatedServices }}
+          <a href="/services/{{ . | urlize }}/" class="related-link">{{ . }} →</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </aside>
+    </div>
+  </section>
+
+</article>
+{{ end }}

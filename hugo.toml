@@ -1,0 +1,67 @@
+baseURL = "https://queensHVACpro.com/"
+languageCode = "en-us"
+title = "Queens HVAC Pro — AC Repair & Heating Service 24/7"
+
+[params]
+  phone = "(718) 555-0193"
+  phonePlain = "7185550193"
+  email = "service@queensHVACpro.com"
+  businessName = "Queens HVAC Pro"
+  tagline = "24/7 HVAC Repair & AC Service — Queens NY"
+  license = "NYC Licensed & Insured · HVAC License #HVAC-88134"
+  rating = "4.9"
+  reviewCount = "287"
+  yearsInBusiness = "14"
+  jobsCompleted = "6,200+"
+  responseTime = "60 Minutes"
+  serviceArea = "Queens, Long Island City, Flushing, Jamaica, Astoria"
+  googleMapsEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96708.34194156093!2d-73.7949!3d40.7282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c26447eb4cff29%3A0xd3d21b5f30cf88a1!2sQueens%2C%20NY!5e0!3m2!1sen!2sus!4v1710000000001!5m2!1sen!2sus"
+  netlifyForm = true
+  description = "Need HVAC repair in Queens? Queens HVAC Pro responds in 60 minutes or less, 24/7/365. Licensed, insured, and trusted by 6,200+ Queens homeowners. Call now."
+
+[params.social]
+  google = "https://g.page/queensHVACpro"
+  yelp = "https://yelp.com/biz/queens-hvac-pro"
+  facebook = "https://facebook.com/queensHVACpro"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[minify]
+  minifyOutput = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[[menus.main]]
+  name = "Services"
+  url = "/services/"
+  weight = 1
+
+[[menus.main]]
+  name = "Areas We Serve"
+  url = "/locations/"
+  weight = 2
+
+[[menus.main]]
+  name = "About"
+  url = "/about/"
+  weight = 3
+
+[[menus.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 4
+
+[[menus.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 5

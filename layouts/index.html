@@ -1,0 +1,281 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+  </div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Serving Queens Since 2007 · NYC Licensed
+        </div>
+        <h1 class="hero-title">
+          HVAC Technician<br>
+          <span class="hero-accent">Queens, NY</span><br>
+          <span class="hero-sub-title">45-Min Response · 24/7/365</span>
+        </h1>
+        <p class="hero-desc">Burst pipe at 2am? No heat? Backed-up sewer? Our licensed Queens HVAC technicians are dispatched immediately. Flat-rate pricing. No surprise bills.</p>
+
+        <div class="hero-actions">
+          <a href="tel:{{ .Site.Params.phonePlain }}" class="btn-primary btn-pulse">
+            <span class="btn-icon">📞</span>
+            Call {{ .Site.Params.phone }}
+          </a>
+          <a href="#contact-form" class="btn-secondary">Get Free Estimate →</a>
+        </div>
+
+        <div class="hero-proof">
+          <div class="proof-item">
+            <strong>{{ .Site.Params.rating }}★</strong>
+            <span>{{ .Site.Params.reviewCount }} Reviews</span>
+          </div>
+          <div class="proof-divider"></div>
+          <div class="proof-item">
+            <strong>{{ .Site.Params.jobsCompleted }}</strong>
+            <span>Jobs Completed</span>
+          </div>
+          <div class="proof-divider"></div>
+          <div class="proof-item">
+            <strong>{{ .Site.Params.responseTime }}</strong>
+            <span>Avg Response</span>
+          </div>
+          <div class="proof-divider"></div>
+          <div class="proof-item">
+            <strong>$0</strong>
+            <span>Dispatch Fee</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="hero-form" id="contact-form">
+        <div class="form-header">
+          <span class="form-badge">⚡ Emergency Response Form</span>
+          <h2 class="form-title">Get a HVAC Technician to You Fast</h2>
+          <p class="form-sub">Average callback: under 3 minutes</p>
+        </div>
+        {{ if .Site.Params.netlifyForm }}
+        <form name="emergency-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+          <input type="hidden" name="form-name" value="emergency-contact">
+          <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(718) 555-0000" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address in Queens</label>
+            <input type="text" id="address" name="address" placeholder="123 Grand Concourse, Queens NY" required>
+          </div>
+
+          <div class="form-group">
+            <label for="issue">What's the problem?</label>
+            <select id="issue" name="issue" required>
+              <option value="">Select emergency type...</option>
+              <option>Burst or leaking pipe</option>
+              <option>No hot water / HVAC unit</option>
+              <option>Clogged drain / backed-up sewer</option>
+              <option>Thermostat overflow</option>
+              <option>Gas line issue</option>
+              <option>Frozen pipes</option>
+              <option>Sump pump failure</option>
+              <option>Other HVAC service emergency</option>
+            </select>
+          </div>
+
+          <button type="submit" class="form-submit">
+            Send — Get Called Back in 3 Min
+          </button>
+
+          <p class="form-disclaimer">🔒 Your info stays private. No spam, ever.</p>
+        </form>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">What We Fix</span>
+      <h2>Queens HVAC Service Services</h2>
+      <p>Every job is handled by a NYC-licensed master HVAC technician. Flat-rate pricing quoted before we start.</p>
+    </div>
+
+    <div class="services-grid">
+      {{ range (where .Site.RegularPages "Section" "services") | first 6 }}
+      <a href="{{ .RelPermalink }}" class="service-card">
+        <div class="service-icon">{{ .Params.icon }}</div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.excerpt }}</p>
+        <span class="service-link">Learn more →</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-content">
+        <span class="section-tag">Why Queens Homeowners Choose Us</span>
+        <h2>We Show Up When Others Don't</h2>
+        <p>Most HVAC technicians in Queens don't answer after 5pm. We built our entire operation around the moments that actually matter — AC breakdowns at midnight, floods on Thanksgiving, frozen AC units in January.</p>
+
+        <div class="why-points">
+          <div class="why-point">
+            <span class="why-check">✓</span>
+            <div>
+              <strong>Flat-rate pricing</strong>
+              <p>We quote before we start. The price you hear is the price you pay.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <span class="why-check">✓</span>
+            <div>
+              <strong>NYC Master HVAC Technician Licensed</strong>
+              <p>License #HVAC-88134. Fully insured. Permitted work available.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <span class="why-check">✓</span>
+            <div>
+              <strong>Queens locals only</strong>
+              <p>We live here. We're not driving from Long Island. 45-min response is real.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <span class="why-check">✓</span>
+            <div>
+              <strong>1-year labor warranty</strong>
+              <p>If anything we fix breaks within a year, we come back. No charge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-stats">
+        <div class="stat-card">
+          <div class="stat-big">{{ .Site.Params.rating }}★</div>
+          <div class="stat-label">Average Google Rating</div>
+          <div class="stat-sub">From {{ .Site.Params.reviewCount }} verified reviews</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-big">{{ .Site.Params.responseTime }}</div>
+          <div class="stat-label">Average Response Time</div>
+          <div class="stat-sub">Across all Queens zip codes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-big">{{ .Site.Params.jobsCompleted }}</div>
+          <div class="stat-label">HVAC Service Jobs Completed</div>
+          <div class="stat-sub">In Queens & surrounding areas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS STRIP -->
+<section class="locations-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Service Area</span>
+      <h2>Queens Neighborhoods We Cover</h2>
+    </div>
+    <div class="locations-grid">
+      {{ range (where .Site.RegularPages "Section" "locations") }}
+      <a href="{{ .RelPermalink }}" class="location-chip">{{ .Title }}</a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Real Reviews</span>
+      <h2>What Queens Residents Say</h2>
+    </div>
+    <div class="reviews-grid">
+      {{ range .Site.Data.reviews }}
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"{{ .text }}"</p>
+        <div class="review-author">
+          <strong>{{ .name }}</strong>
+          <span>{{ .neighborhood }}, Queens</span>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section">
+  <div class="container">
+    <div class="map-header">
+      <h2>Serving All of Queens</h2>
+      <p>From Riverdale to Pelham Bay — if you're in Queens, we're coming to you.</p>
+    </div>
+    <div class="map-embed">
+      <iframe
+        src="{{ .Site.Params.googleMapsEmbed }}"
+        width="100%" height="400"
+        style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="blog-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">HVAC Service Tips</span>
+      <h2>Queens HVAC Service Guide</h2>
+    </div>
+    <div class="blog-grid">
+      {{ range (where .Site.RegularPages "Section" "blog") | first 3 }}
+      <a href="{{ .RelPermalink }}" class="blog-card">
+        <div class="blog-meta">{{ .Date.Format "Jan 2, 2006" }} · {{ .ReadingTime }} min read</div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Summary }}</p>
+        <span class="blog-link">Read more →</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>HVAC Service Emergency in Queens?</h2>
+      <p>Don't wait. Every minute costs more water damage. Call now and have a licensed HVAC technician at your door in 45 minutes.</p>
+      <a href="tel:{{ .Site.Params.phonePlain }}" class="btn-primary btn-xl btn-pulse">
+        📞 {{ .Site.Params.phone }} — Call 24/7
+      </a>
+      <p class="cta-sub">{{ .Site.Params.license }}</p>
+    </div>
+  </div>
+</section>
+
+{{ end }}
